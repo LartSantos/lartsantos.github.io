@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Laerte Otávio, desenvolvedor em busca de estágio em tecnologia.">
+  <title>Laerte Otávio | Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Link para quem usa teclado pular direto ao conteúdo -->
+  <a class="pular" href="#inicio">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO: logo, menu e botão de tema -->
+  <header class="cabecalho">
+    <a class="logo" href="#inicio" aria-label="Laerte Otávio, ir para o início">Laerte Otávio</a>
+
+    <button class="btn-menu" id="btnMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+
+    <nav id="menu" class="menu" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <button class="btn-tema" id="btnTema" aria-label="Alternar modo claro e escuro">🌙</button>
+  </header>
+
+  <main>
+    <!-- INÍCIO -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <div class="hero-texto">
+        <p id="saudacao" class="saudacao" aria-live="polite">Olá!</p>
+        <h1 id="titulo-hero">LAERTE <strong>OTÁVIO</strong></h1>
+        <p class="cargo">Desenvolvedor Full Stack em formação</p>
+        <div class="botoes">
+          <a class="btn" href="#projetos">Ver projetos</a>
+          <a class="btn" href="#contato">Contato</a>
+        </div>
+      </div>
+      <img class="avatar" src="img/foto.png" alt="Foto de Laerte Otávio sorrindo, de óculos e moletom preto">
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="secao sobre" aria-labelledby="titulo-sobre">
+      <div class="sobre-texto">
+        <h2 id="titulo-sobre">Sobre mim</h2>
+        <p>Sou apaixonado por tecnologia, computadores e video games. Foi jogando e mexendo em computadores que descobri a vontade de entender como tudo funciona por dentro.</p>
+        <p>Hoje estudo desenvolvimento web e busco uma oportunidade de estágio na área de tecnologia para aprender com a prática, trabalhar em equipe e criar soluções que ajudem as pessoas.</p>
+      </div>
+      <img class="foto-sobre" src="img/foto.png" alt="" aria-hidden="true">
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="secao" aria-labelledby="titulo-hab">
+      <h2 id="titulo-hab">Habilidades</h2>
+      <ul class="skills">
+        <li><span>Front-end</span><div class="barra" style="--nivel: 70%"></div></li>
+        <li><span>Back-end</span><div class="barra" style="--nivel: 60%"></div></li>
+        <li><span>Banco de dados</span><div class="barra" style="--nivel: 60%"></div></li>
+        <li><span>Python</span><div class="barra" style="--nivel: 75%"></div></li>
+      </ul>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="secao" aria-labelledby="titulo-proj">
+      <h2 id="titulo-proj">Projetos</h2>
+      <div class="projetos">
+        <article class="card">
+          <h3>NewUsess</h3>
+          <p>Site voltado para a compra e venda de produtos usados.</p>
+        </article>
+        <article class="card">
+          <h3>Cinerepertório</h3>
+          <p>Site que ajuda a buscar repertório sociocultural para redações.</p>
+        </article>
+        <article class="card">
+          <h3>BUSgps</h3>
+          <p>Projeto para rastrear ônibus e informar os horários.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTATO (sem formulário: só e-mail e GitHub) -->
+    <section id="contato" class="secao" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Contato</h2>
+      <p>Vamos conversar? Me chame por um dos canais abaixo.</p>
+      <div class="botoes">
+        <a class="btn" href="mailto:larteosdsantos@proton.me" aria-label="Enviar e-mail para Laerte">larteosdsantos@proton.me</a>
+        <a class="btn" href="https://github.com/LartSantos" target="_blank" rel="noopener noreferrer" aria-label="Abrir o GitHub de Laerte em nova aba">github.com/LartSantos</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>© <span id="ano">2026</span> Laerte Otávio</p>
+    <a href="#inicio" aria-label="Voltar ao topo da página">Voltar ao topo ↑</a>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

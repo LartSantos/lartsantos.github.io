@@ -1,0 +1,131 @@
+/* ===== Cores (tema escuro é o padrão, como na imagem de referência) ===== */
+:root {
+  --fundo: #0b1018;
+  --fundo-card: #141c29;
+  --texto: #f2f5f9;
+  --texto-suave: #b5c0cf;
+  --destaque: #4aa8e0;
+  --borda: #2b3a4f;
+}
+
+/* Tema claro: o JavaScript coloca data-tema="claro" no <html> */
+[data-tema="claro"] {
+  --fundo: #f4f7fb;
+  --fundo-card: #ffffff;
+  --texto: #101722;
+  --texto-suave: #3d4a5c;
+  --destaque: #0b6aa8;
+  --borda: #c3cedb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--destaque); outline-offset: 3px; }
+
+/* Link de acessibilidade (aparece só com o foco do teclado) */
+.pular { position: absolute; left: -999px; background: var(--destaque); color: #000; padding: 8px 12px; }
+.pular:focus { left: 8px; top: 8px; z-index: 20; }
+
+/* ===== Cabeçalho (Flexbox) ===== */
+.cabecalho {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 6vw;
+  background: var(--fundo);
+  border-bottom: 1px solid var(--borda);
+}
+.logo { font-weight: 700; text-decoration: none; }
+.menu { display: flex; gap: 26px; margin-right: auto; margin-left: 40px; }
+.menu a { text-decoration: none; font-size: 0.9rem; color: var(--texto-suave); }
+.menu a:hover { color: var(--destaque); }
+.btn-tema, .btn-menu {
+  background: none; border: 1px solid var(--borda); color: var(--texto);
+  border-radius: 8px; padding: 6px 10px; font-size: 1.1rem; cursor: pointer;
+}
+.btn-menu { display: none; }
+
+/* ===== Início ===== */
+.hero {
+  min-height: 85vh;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; padding: 40px 6vw;
+  background: radial-gradient(circle at 80% 30%, rgba(74, 168, 224, 0.22), transparent 55%);
+}
+.saudacao { color: var(--destaque); font-size: 1.1rem; }
+.hero h1 { font-size: 2.2rem; font-weight: 400; letter-spacing: 0.1em; line-height: 1.1; }
+.hero h1 strong { display: block; font-size: clamp(3rem, 9vw, 5.5rem); font-weight: 800; letter-spacing: 0.02em; }
+.cargo { color: var(--texto-suave); letter-spacing: 0.2em; margin: 8px 0 28px; }
+.avatar {
+  width: min(320px, 40vw); aspect-ratio: 1; object-fit: cover;
+  border-radius: 50%; border: 4px solid var(--destaque);
+}
+
+/* Botões no estilo "contorno", como na referência */
+.botoes { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn {
+  display: inline-block; padding: 10px 26px; text-decoration: none;
+  border: 1.5px solid var(--texto); border-radius: 30px; font-size: 0.9rem;
+}
+.btn:hover { background: var(--destaque); border-color: var(--destaque); color: #000; }
+
+/* ===== Seções ===== */
+.secao { padding: 80px 6vw; max-width: 1100px; margin: 0 auto; }
+.secao h2, .sobre h2 {
+  display: inline-block; margin-bottom: 24px; font-size: 1.6rem;
+  border-bottom: 3px solid var(--destaque); padding-bottom: 4px;
+}
+.secao p { max-width: 60ch; margin-bottom: 14px; color: var(--texto-suave); }
+
+/* Sobre: texto + foto grande à direita (Grid) */
+.sobre { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+.foto-sobre {
+  width: 100%; max-height: 460px; object-fit: cover; border-radius: 12px;
+  /* esmaece a borda da foto, parecido com a referência */
+  -webkit-mask-image: linear-gradient(to left, #000 60%, transparent);
+  mask-image: linear-gradient(to left, #000 60%, transparent);
+}
+
+/* Habilidades */
+.skills { list-style: none; display: grid; gap: 22px; max-width: 520px; }
+.skills span { display: block; margin-bottom: 6px; font-size: 0.95rem; }
+.barra { height: 6px; background: var(--borda); border-radius: 6px; }
+.barra::after { content: ""; display: block; width: var(--nivel); height: 100%; background: var(--destaque); border-radius: 6px; }
+
+/* Projetos (Grid responsivo) */
+.projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.card { background: var(--fundo-card); border: 1px solid var(--borda); border-left: 4px solid var(--destaque); border-radius: 10px; padding: 24px; }
+.card h3 { margin-bottom: 8px; }
+.card p { margin: 0; }
+
+/* Rodapé */
+.rodape {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  padding: 24px 6vw; border-top: 1px solid var(--borda); color: var(--texto-suave);
+}
+
+/* ===== Celular e tablet ===== */
+@media (max-width: 800px) {
+  .btn-menu { display: block; }
+  .menu {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; margin: 0;
+    background: var(--fundo); border-bottom: 1px solid var(--borda);
+  }
+  .menu.aberto { display: flex; }
+  .menu a { padding: 14px 6vw; }
+  .btn-tema { margin-left: auto; }
+  .hero { flex-direction: column-reverse; text-align: center; padding-top: 30px; }
+  .botoes { justify-content: center; }
+  .sobre { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
